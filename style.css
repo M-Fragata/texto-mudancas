@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+#divs{
+    width: 80dvw;
+    max-width: 600px;
+    display: flex;
+    gap: 20px;
+    margin: auto;
+    flex-flow: column nowrap;
+}
+
+.inputSize{
+
+}

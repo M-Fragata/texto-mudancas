@@ -1,36 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Change Text</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Fragata Text</h1>
         <p>Faça alterações no seu texto de forma gratuita.</p>
     </header>
     <main>
-        <div id="texto">
-            <input type="text" id="text">
-        </div>
-        <div id="resultado">
-        </div>
         <div>
-            <input type="button" value="Alterar" id="change">
+            <input type="button" value="minuscula" id="minuscula">
+            <input type="button" value="maiuscula" id="maiuscula">
+            <input type="button" value="espaço" id="espaco">
         </div>
+        <section id="bordaSection">
+            <div id="divs">
+                <input type="text" id="text" class="inputSize">
+            </div>
+        </section>
+
     </main>
 
     <script>
+        const divs = document.querySelector('div#divs')
 
-        const text = document.querySelector('input#text')
+        maiuscula.addEventListener('click', () => {
 
-        const alterar = document.querySelector('input#change')
+            let text = document.querySelector('input#text').value
+            text = text.toUpperCase()
 
-        alterar.addEventListener('click', () => {
-            
+            let newInput = document.createElement('input')
+
+            newInput.value = `${text}`
+
+            divs.appendChild(newInput)
+
+        })
+
+        minuscula.addEventListener('click', () => {
+            let text = document.querySelector('input#text').value
+            text = text.toLowerCase()
+
+            let newInput = document.createElement('input')
+
+            newInput.value = `${text}`
+
+            divs.appendChild(newInput)
+        })
+
+        espaco.addEventListener('click', () => {
+
+            const substituir = window.prompt("Deseja substituir o que?")
+
+            const forWhat = window.prompt("Pelo que?")
+
+            let text = document.querySelector('input#text').value
+            text = text.replaceAll(substituir, forWhat)
+
+            let newInput = document.createElement('input')
+
+            newInput.value = `${text}`
+
+            divs.appendChild(newInput)
         })
 
     </script>
 </body>
+
 </html>
